@@ -1,0 +1,50 @@
+#D1
+Have an awesome session on Recursion, Memoization with Telusko
+have a look: https://www.youtube.com/watch?v=q7-Y_98w6bw
+
+(in case if you want to learn Java:
+Java and Spring Live Course link : https://bit.ly/TeluskoJavaLive
+Coupon for Discount : TELUSKO50)
+
+
+
+Assignment 1 (Passcal Triangle):
+
+Problem Statement: Implement Pascal Triangle in recursive, memoization and iteration method
+
+Solution Code: https://github.com/sayan-karmakar007/Telusko_Macbook_Contest/tree/main/A1
+
+Explaination: 
+1. Recursive Method: We start with a row number and a column number. Let's say we want to find the number in the third row and second column. We can find it by adding the number from the second row, first column, with the number from the second row, second column.
+
+To find these two numbers, we repeat the same process. For example, to find the number in the second row and first column, we add the number from the first row, first column, with the number from the first row, second column. And to find the number in the second row and second column, we add the number from the first row, second column, with the number from the first row, third column.
+
+We keep going like this, breaking down the problem until we reach the base case, which is the simplest form of the problem. In our case, the base case is when we are at the first column or the last column of a row, where the number is always 1.
+
+By using this recursive approach, we can calculate any number in Pascal's Triangle by adding the two numbers directly above it.
+
+To draw the triangle, we can start from the top and go row by row. For each row, we calculate the numbers using the recursive method and print them out.
+
+That's how we can create Pascal's Triangle using a recursive method. It's like building a tower by stacking up smaller blocks on top of each other, following a set of rules."
+
+2. Memoization Method: To create Pascal's Triangle more efficiently, we can use a memoization method. Memoization means that we remember and store the answers to problems we've already solved, so we don't have to solve them again.
+
+we start with an empty memory. Whenever we need to find a number in the triangle, we check if we already know the answer for that number by looking into our memory. If we find the answer, we simply use it. If not, we calculate the number using the recursive approach and store the answer in our memory.
+
+By using this memoization method, we can avoid recalculating the same numbers multiple times. It saves us time and effort!
+
+To draw the triangle, we can start from the top and go row by row. For each row, we calculate the numbers using the memoization method. We check if we have the answer for a number in our memory. If we do, we use it. Otherwise, we calculate the number by adding the two numbers directly above it, store the answer in our memory, and then use it.
+
+That's how we can create Pascal's Triangle using the memoization method. It's like having a special notebook where we write down answers to problems we've already solved, so we don't have to solve them again in the future."
+
+3. Iteration Method: Here we start from the top of the triangle and go row by row. For each row, we calculate the numbers by looking at the numbers in the previous row.
+
+To calculate a number, we look at the two numbers directly above it. We add those two numbers together, and that gives us the number for the current position.
+
+We keep doing this for each row, moving from left to right. We start with the first row, which only has one number, which is 1. Then, for each subsequent row, we calculate the numbers by adding the two numbers above it.
+
+By following this process, we can build Pascal's Triangle row by row, calculating each number based on the numbers directly above it.
+
+To draw the triangle, we start with a single 1 at the top. Then, for each row, we calculate the numbers and write them down. Each row starts and ends with 1, and the numbers in between are calculated using the iterative method.
+
+That's how we can create Pascal's Triangle using the iterative method. It's like building a staircase, adding one step at a time, based on the steps we've already built."
