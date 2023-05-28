@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .short-url {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <div class="container">
+        <form id="urlForm">
+            <div class="form-group">
+                <label for="originalUrl">Original URL:</label>
+                <input type="text" id="originalUrl" name="originalUrl" placeholder="Enter your URL" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Generate Short URL">
+            </div>
+        </form>
+        <div class="short-url" id="shortUrl"></div>
+    </div>
+
+    <script>
+        document.getElementById("urlForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var originalUrl = document.getElementById("originalUrl").value;
+
+            // Make AJAX request to the backend
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/urls/generate?oUrl=" + encodeURIComponent(originalUrl), true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var shortUrl = document.getElementById("shortUrl");
+                    shortUrl.innerText = "Short URL: " + xhr.responseText;
+                    shortUrl.style.display = "block";
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
